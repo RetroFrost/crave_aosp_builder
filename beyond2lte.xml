@@ -13,18 +13,13 @@
         fetch="https://github.com/LineageOS/"
         revision="refs/heads/lineage-22.1" />
 
-    <!-- Current location of PixelOS GMS sources -->
-    <remote
-        name="pixelos-gitlab"
-        fetch="https://gitlab.com/PixelOS-AOSP/" />
-
-    <!-- PixelOS 15 manifest incorrectly requests the removed fifteen branch -->
+    <!-- Replace the dead vendor_gms project with PixelOS's Android 15 repo -->
     <remove-project name="vendor_gms" />
     <project
-        name="vendor_gms"
+        name="vendor_gms-15"
         path="vendor/gms"
-        remote="pixelos-gitlab"
-        revision="refs/heads/sixteen"
+        remote="PixelOS-Gitlab"
+        revision="refs/heads/fifteen"
         clone-depth="1" />
 
     <!-- Galaxy S10+ -->
