@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <!-- Archived PixelOS Android 15 device sources -->
+    <remote
+        name="pixelos-devices-old"
+        fetch="https://github.com/PixelOS-Devices-old/"
+        revision="refs/heads/fifteen" />
+
+    <!-- One dependency not present in the PixelOS device organization -->
+    <remote
+        name="lineage"
+        fetch="https://github.com/LineageOS/"
+        revision="refs/heads/lineage-22.1" />
+
+    <!-- Current location of PixelOS GMS sources -->
+    <remote
+        name="pixelos-gitlab"
+        fetch="https://gitlab.com/PixelOS-AOSP/" />
+
+    <!-- PixelOS 15 manifest incorrectly requests the removed fifteen branch -->
+    <remove-project name="vendor_gms" />
+    <project
+        name="vendor_gms"
+        path="vendor/gms"
+        remote="pixelos-gitlab"
+        revision="refs/heads/sixteen"
+        clone-depth="1" />
+
+    <!-- Galaxy S10+ -->
+    <project
+        name="device_samsung_beyond2lte"
+        path="device/samsung/beyond2lte"
+        remote="pixelos-devices-old" />
+
+    <!-- Exynos 9820 common tree -->
+    <project
+        name="device_samsung_exynos9820-common"
+        path="device/samsung/exynos9820-common"
+        remote="pixelos-devices-old" />
+
+    <!-- SELinux -->
+    <project
+        name="device_samsung_slsi_sepolicy"
+        path="device/samsung_slsi/sepolicy"
+        remote="pixelos-devices-old" />
+
+    <!-- Samsung hardware -->
+    <project
+        name="hardware_samsung"
+        path="hardware/samsung"
+        remote="pixelos-devices-old" />
+
+    <project
+        name="hardware_samsung_slsi-linaro_config"
+        path="hardware/samsung_slsi-linaro/config"
+        remote="pixelos-devices-old" />
+
+    <project
+        name="hardware_samsung_slsi-linaro_exynos"
+        path="hardware/samsung_slsi-linaro/exynos"
+        remote="pixelos-devices-old" />
+
+    <project
+        name="hardware_samsung_slsi-linaro_exynos5"
+        path="hardware/samsung_slsi-linaro/exynos5"
+        remote="pixelos-devices-old" />
+
+    <project
+        name="hardware_samsung_slsi-linaro_graphics"
+        path="hardware/samsung_slsi-linaro/graphics"
+        remote="pixelos-devices-old" />
+
+    <project
+        name="hardware_samsung_slsi-linaro_interfaces"
+        path="hardware/samsung_slsi-linaro/interfaces"
+        remote="pixelos-devices-old" />
+
+    <project
+        name="hardware_samsung_slsi-linaro_openmax"
+        path="hardware/samsung_slsi-linaro/openmax"
+        remote="pixelos-devices-old" />
+
+    <project
+        name="android_hardware_samsung_slsi-linaro_codec2"
+        path="hardware/samsung_slsi-linaro/codec2"
+        remote="lineage" />
+
+    <!-- Kernel -->
+    <project
+        name="kernel_samsung_exynos9820"
+        path="kernel/samsung/exynos9820"
+        remote="pixelos-devices-old" />
+
+    <!-- Proprietary vendor blobs -->
+    <project
+        name="vendor_samsung_beyond2lte"
+        path="vendor/samsung/beyond2lte"
+        remote="pixelos-devices-old" />
+
+    <project
+        name="vendor_samsung_exynos9820-common"
+        path="vendor/samsung/exynos9820-common"
+        remote="pixelos-devices-old" />
+
+</manifest>
