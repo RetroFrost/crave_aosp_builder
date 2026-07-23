@@ -13,12 +13,6 @@
         fetch="https://github.com/LineageOS/"
         revision="refs/heads/lineage-22.1" />
 
-    <!-- Build overrides stored in this repository -->
-    <remote
-        name="retrofrost"
-        fetch="https://github.com/RetroFrost/"
-        revision="refs/heads/main" />
-
     <!-- Replace the dead vendor_gms project with PixelOS's Android 15 repo -->
     <remove-project name="vendor_gms" />
     <project
@@ -103,16 +97,5 @@
         name="vendor_samsung_exynos9820-common"
         path="vendor/samsung/exynos9820-common"
         remote="pixelos-devices-old" />
-
-    <!-- Override the archived tree's obsolete two-part lunch choices. -->
-    <project
-        name="crave_aosp_builder"
-        path="vendor/retrofrost/build-overrides"
-        remote="retrofrost"
-        clone-depth="1">
-        <copyfile
-            src="patches/beyond2lte/AndroidProducts.mk.override"
-            dest="device/samsung/beyond2lte/AndroidProducts.mk" />
-    </project>
 
 </manifest>
