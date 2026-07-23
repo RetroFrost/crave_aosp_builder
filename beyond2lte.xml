@@ -111,7 +111,7 @@
         remote="retrofrost"
         clone-depth="1">
         <copyfile
-            src="patches/beyond2lte/AndroidProducts.mk"
+            src="patches/beyond2lte/AndroidProducts.mk.override"
             dest="device/samsung/beyond2lte/AndroidProducts.mk" />
     </project>
 
