@@ -1,4 +1,4 @@
-# Retrigger after stale rerun used old workflow SHA
+# Retrigger after stale Crave destination cleanup
 name: Dispatch PixelOS 15 beyond2lte build
 
 on:
