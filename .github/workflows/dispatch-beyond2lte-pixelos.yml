@@ -19,6 +19,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh workflow run selfhosted.yml \
+            --repo RetroFrost/crave_aosp_builder \
             --ref main \
             -f BASE_PROJECT='PixelOS 15' \
             -f BUILD_DIFFERENT_ROM="echo 'Build Starting!'" \
