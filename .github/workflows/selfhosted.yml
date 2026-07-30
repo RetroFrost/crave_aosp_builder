@@ -424,9 +424,21 @@ jobs:
         fi
 
         if [[ $DCDEVSPACE == *1* ]]; then
-          crave clone create --projectID $PROJECTID $PROJECTFOLDER || echo "Crave clone create failed!"
+          clone_created=false
+          for attempt in 1 2 3; do
+            echo "Creating Crave clone (attempt $attempt/3)..."
+            if crave clone create --projectID "$PROJECTID" "$PROJECTFOLDER"; then
+              clone_created=true
+              break
+            fi
+            sleep $((attempt * 30))
+          done
+          if [[ "$clone_created" != "true" || ! -d "$PROJECTFOLDER" ]]; then
+            echo "Crave clone creation failed after 3 attempts."
+            exit 1
+          fi
         else
-          mkdir -p $PROJECTFOLDER
+          mkdir -p "$PROJECTFOLDER"
         fi
         
       # Check-out in order to access the repository's files.
