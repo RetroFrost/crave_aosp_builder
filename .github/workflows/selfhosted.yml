@@ -418,14 +418,18 @@ jobs:
           echo "We are already running in devspace... Skipping Symlinks"
         fi
         if grep -q "$PROJECTFOLDER" <(crave clone list --json | jq -r '.clones[]."Cloned At"') || [[ "${DCDEVSPACE}" == "1" ]]; then
-          crave clone destroy -y $PROJECTFOLDER || echo "Error removing $PROJECTFOLDER"
-        else          
-        echo "Skipping removal"
+          crave clone destroy -y "$PROJECTFOLDER" || echo "Error removing $PROJECTFOLDER"
+        else
+          echo "Skipping removal"
         fi
 
         if [[ $DCDEVSPACE == *1* ]]; then
           clone_created=false
           for attempt in 1 2 3; do
+            if [[ -e "$PROJECTFOLDER" ]]; then
+              echo "Removing stale Crave destination before clone create..."
+              rm -rf "$PROJECTFOLDER"
+            fi
             echo "Creating Crave clone (attempt $attempt/3)..."
             if crave clone create --projectID "$PROJECTID" "$PROJECTFOLDER"; then
               clone_created=true
