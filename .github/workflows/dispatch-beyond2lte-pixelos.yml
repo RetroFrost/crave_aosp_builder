@@ -1,4 +1,4 @@
-# Retrigger after Crave clone retry fix
+# Retrigger after stale rerun used old workflow SHA
 name: Dispatch PixelOS 15 beyond2lte build
 
 on:
