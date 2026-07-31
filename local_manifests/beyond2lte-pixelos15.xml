@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="pixelos-devices-old" fetch="https://github.com/PixelOS-Devices-old" revision="fifteen" />
+  <remote name="lineageos" fetch="https://github.com/LineageOS" revision="lineage-22.2" />
 
   <!-- Samsung Galaxy S10+ (beyond2lte) PixelOS 15 device stack. -->
   <project remote="pixelos-devices-old" name="device_samsung_beyond2lte" path="device/samsung/beyond2lte" />
@@ -9,14 +10,14 @@
   <project remote="pixelos-devices-old" name="vendor_samsung_beyond2lte" path="vendor/samsung/beyond2lte" />
   <project remote="pixelos-devices-old" name="vendor_samsung_exynos9820-common" path="vendor/samsung/exynos9820-common" />
 
-  <project remote="pixelos-devices-old" name="android_kernel_samsung_exynos9820" path="kernel/samsung/exynos9820" />
-  <project remote="pixelos-devices-old" name="android_device_samsung_slsi_sepolicy" path="device/samsung_slsi/sepolicy" />
+  <project remote="lineageos" name="android_kernel_samsung_exynos9820" path="kernel/samsung/exynos9820" />
+  <project remote="lineageos" name="android_device_samsung_slsi_sepolicy" path="device/samsung_slsi/sepolicy" />
 
-  <project remote="pixelos-devices-old" name="android_hardware_samsung" path="hardware/samsung" />
-  <project remote="pixelos-devices-old" name="android_hardware_samsung_slsi-linaro_config" path="hardware/samsung_slsi-linaro/config" />
-  <project remote="pixelos-devices-old" name="android_hardware_samsung_slsi-linaro_exynos" path="hardware/samsung_slsi-linaro/exynos" />
-  <project remote="pixelos-devices-old" name="android_hardware_samsung_slsi-linaro_exynos5" path="hardware/samsung_slsi-linaro/exynos5" />
-  <project remote="pixelos-devices-old" name="android_hardware_samsung_slsi-linaro_graphics" path="hardware/samsung_slsi-linaro/graphics" />
-  <project remote="pixelos-devices-old" name="android_hardware_samsung_slsi-linaro_interfaces" path="hardware/samsung_slsi-linaro/interfaces" />
-  <project remote="pixelos-devices-old" name="android_hardware_samsung_slsi-linaro_openmax" path="hardware/samsung_slsi-linaro/openmax" />
+  <project remote="lineageos" name="android_hardware_samsung" path="hardware/samsung" />
+  <project remote="lineageos" name="android_hardware_samsung_slsi-linaro_config" path="hardware/samsung_slsi-linaro/config" />
+  <project remote="lineageos" name="android_hardware_samsung_slsi-linaro_exynos" path="hardware/samsung_slsi-linaro/exynos" />
+  <project remote="lineageos" name="android_hardware_samsung_slsi-linaro_exynos5" path="hardware/samsung_slsi-linaro/exynos5" />
+  <project remote="lineageos" name="android_hardware_samsung_slsi-linaro_graphics" path="hardware/samsung_slsi-linaro/graphics" />
+  <project remote="lineageos" name="android_hardware_samsung_slsi-linaro_interfaces" path="hardware/samsung_slsi-linaro/interfaces" />
+  <project remote="lineageos" name="android_hardware_samsung_slsi-linaro_openmax" path="hardware/samsung_slsi-linaro/openmax" />
 </manifest>
